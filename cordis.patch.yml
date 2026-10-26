@@ -1,0 +1,9 @@
+# dsh-mini-window bundle patch
+#
+# 只插入一行 Host 插件（index.js）：它提供窗口控制端点，并调用
+# scripts/win-mini-window.ps1 做 Win32 置顶 / 还原。
+# 小窗的全部界面在浏览器侧（./client.js）注册到 shell.overlay（常驻浮层 /
+# 页内小窗 / 提示条）与 conversation.composer.dock（会话桥）。
+- insert:
+    - id: mini-window
+      name: 'dsh-mini-window'
