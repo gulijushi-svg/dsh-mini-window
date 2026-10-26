@@ -51,7 +51,7 @@ $payload = @{
   has_issues  = $true
 } | ConvertTo-Json
 try {
-  $repoInfo = Invoke-RestMethod -Uri "$api/user/repos" -Headers $headers -Method Post -Body $payload -ContentType 'application/json'
+  $repoInfo = Invoke-RestMethod -Uri "$api/user/repos" -Headers $headers -Method Post -Body ([System.Text.Encoding]::UTF8.GetBytes($payload)) -ContentType 'application/json; charset=utf-8'
   Write-Host "    已创建：$($repoInfo.html_url)"
 } catch {
   $status = $_.Exception.Response.StatusCode.value__
@@ -101,7 +101,7 @@ foreach ($file in $files) {
   if ($null -ne $sha) { $body = ($body | ConvertFrom-Json); $body | Add-Member -NotePropertyName sha -NotePropertyValue $sha; $body = $body | ConvertTo-Json }
 
   try {
-    Invoke-RestMethod -Uri "$api/repos/$owner/$Repo/contents/$rel" -Headers $headers -Method Put -Body $body -ContentType 'application/json' | Out-Null
+    Invoke-RestMethod -Uri "$api/repos/$owner/$Repo/contents/$rel" -Headers $headers -Method Put -Body ([System.Text.Encoding]::UTF8.GetBytes($body)) -ContentType 'application/json; charset=utf-8' | Out-Null
     $committed += 1
     Write-Host "    [$committed/$($files.Count)] $rel"
   } catch {
@@ -112,7 +112,7 @@ foreach ($file in $files) {
 Write-Step '设置 topics'
 try {
   $topics = @{ names = @('dsh', 'deepseek-harness', 'cordis-plugin', 'mini-window', 'always-on-top') } | ConvertTo-Json
-  Invoke-RestMethod -Uri "$api/repos/$owner/$Repo/topics" -Headers $headers -Method Put -Body $topics -ContentType 'application/json' | Out-Null
+  Invoke-RestMethod -Uri "$api/repos/$owner/$Repo/topics" -Headers $headers -Method Put -Body ([System.Text.Encoding]::UTF8.GetBytes($topics)) -ContentType 'application/json; charset=utf-8' | Out-Null
   Write-Host '    已设置'
 } catch {
   Write-Warning "    topics 设置失败（不影响仓库）：$($_.Exception.Message)"
