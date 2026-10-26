@@ -1,0 +1,51 @@
+{
+  "name": "dsh-mini-window",
+  "version": "1.2.0",
+  "description": "把 DeepSeek Harness 变成常驻屏幕的音乐播放器式小窗：悬浮球入口 + 屏幕级置顶小窗 + 页内小窗，内置输入框直接给当前会话发消息并实时显示模型回复。",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis-plugin",
+    "mini-window",
+    "always-on-top",
+    "floating-window"
+  ],
+  "meta": {
+    "title": "DSH 小窗（屏幕级置顶 + 悬浮输入）",
+    "description": "常驻的悬浮球入口：单击让 Harness 主窗口变成置顶小窗（切到任何应用都浮在最上层），右键切换页内小窗；小窗内置输入框，消息直接进当前会话，并实时显示最新回复。"
+  },
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "scripts",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat"
+      ]
+    }
+  }
+}
