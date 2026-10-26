@@ -36,7 +36,7 @@
 ### 方式 A：dsh CLI（推荐）
 
 ```bash
-dsh plugin --profile desktop add github:<owner>/dsh-mini-window
+dsh plugin --profile desktop add github:gulijushi-svg/dsh-mini-window
 ```
 
 然后重启 dsh 一次。
@@ -128,6 +128,10 @@ dsh-mini-window/
   所以退出时依赖保存的原 `rect`（脚本写在 `%TEMP%\dsh-mini-window-state.json`）。
 - `scripts/win-mini-window.ps1` 必须保持 **UTF-8 with BOM**：
   Windows PowerShell 5.1 会按 ANSI 读取无 BOM 的 UTF-8，中文注释会撑坏语法。
+
+## 仓库
+
+<https://github.com/gulijushi-svg/dsh-mini-window>
 
 ## License
 
