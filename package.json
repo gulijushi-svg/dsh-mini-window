@@ -12,6 +12,14 @@
     "always-on-top",
     "floating-window"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gulijushi-svg/dsh-mini-window.git"
+  },
+  "homepage": "https://github.com/gulijushi-svg/dsh-mini-window#readme",
+  "bugs": {
+    "url": "https://github.com/gulijushi-svg/dsh-mini-window/issues"
+  },
   "meta": {
     "title": "DSH 小窗（屏幕级置顶 + 悬浮输入）",
     "description": "常驻的悬浮球入口：单击让 Harness 主窗口变成置顶小窗（切到任何应用都浮在最上层），右键切换页内小窗；小窗内置输入框，消息直接进当前会话，并实时显示最新回复。"
