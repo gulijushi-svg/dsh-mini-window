@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="DSH Mini Window">
+  <rect x="6" y="12" width="44" height="34" rx="7" fill="#4d6bfe" opacity="0.16"/>
+  <rect x="6" y="12" width="44" height="34" rx="7" fill="none" stroke="#4d6bfe" stroke-width="3"/>
+  <rect x="12" y="18" width="32" height="5" rx="2.5" fill="#4d6bfe"/>
+  <rect x="12" y="28" width="22" height="4" rx="2" fill="#4d6bfe" opacity="0.65"/>
+  <rect x="12" y="36" width="27" height="4" rx="2" fill="#4d6bfe" opacity="0.45"/>
+  <path d="M20 52h16M20 57h9" stroke="#4d6bfe" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+</svg>
